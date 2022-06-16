@@ -1,0 +1,25 @@
+<div class="container">
+    <h1 style="text-align:center;" class="example-form">Formulario de Persona </h1>
+    <form class="example-form" [formGroup]="formGroup" (ngSubmit)="save()">
+      <div style="text-align:center;">
+        <mat-form-field flex appearance="outline" class="anchura">
+          <mat-label>Cedula</mat-label>
+          <input matInput formControlName="cedula" #message maxlength="10" placeholder="1065" type="number">
+          <mat-hint align="start"><strong>Por favor dijite la cedula </strong> </mat-hint>
+          <mat-hint align="end">{{cedula.value.length}} / 10</mat-hint>
+        </mat-form-field>
+    
+        <mat-form-field flex appearance="outline" class="anchura">
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="nombre" #message maxlength="20" placeholder="Micheel">
+          <mat-hint align="start"><strong>Por favor dijite la nombre </strong> </mat-hint>
+          <mat-hint align="end">{{nombre.value.length}} / 20</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="example-button-row" 
+        style="text-align:center; margin-top: 20px; margin-left: -200px;">
+        <button type="submit" mat-fab color="accent">Aceptar</button>
+      </div>
+    </form>
+  </div>
